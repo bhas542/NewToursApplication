@@ -1,0 +1,12 @@
+package com.DataDriven;
+
+import org.testng.annotations.Test;
+
+public class DataDrivenTestCase extends BaseClassDataDriven {
+   @Test
+	public void dataDrivenTestCase()
+	{
+		
+	}
+	
+}

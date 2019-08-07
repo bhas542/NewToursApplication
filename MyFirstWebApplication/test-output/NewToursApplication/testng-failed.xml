@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [NewToursApplication]">
+  <parameter name="Browser" value="FireFox"/>
+  <test name="on FireFox">
+    <parameter name="Browser" value="FireFox"/>
+    <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code"/>
+    </classes>
+  </test> <!-- on FireFox -->
+</suite> <!-- Failed suite [NewToursApplication] -->

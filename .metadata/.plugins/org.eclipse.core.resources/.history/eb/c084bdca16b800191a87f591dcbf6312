@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="FBApplication">
+  <test name="on Chrome">
+    <parameter name="Browser" value="chrome">
+     <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code"/>
+     </classes>  
+   </test>
+<test name="on Firefox">
+    <parameter name="Browser" value="Firefox"/>
+     <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code"/>
+     </classes>  
+   </test>
+</suite>

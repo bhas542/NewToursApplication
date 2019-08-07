@@ -1,0 +1,7 @@
+<suite name="FaceBook Application">
+    <test name="login">
+       <classes>
+         <class name="com.Annotataions.FaceBookLoginAnnotations"></class>
+       </classes>
+    </test>
+</suite>

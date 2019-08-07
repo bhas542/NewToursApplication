@@ -1,0 +1,7 @@
+<suite nam="FaceBook Application">
+    <test name="login">
+       <classes>
+         <class name="com.Facebook.WebdriverTestAutomation.FaceBookLoginValidationTest"/>
+       </classes>
+    </test>
+</suite>

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="FaceBook Application">
+    <test name="login">
+       <Classes>
+         <class name="com.Facebook.WebdriverTestAutomation.FaceBookLoginValidationTest"></class>
+       </Classes>
+    </test>
+</suite>

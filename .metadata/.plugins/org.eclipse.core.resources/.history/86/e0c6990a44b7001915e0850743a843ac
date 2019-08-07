@@ -1,0 +1,14 @@
+<Suite name="NewToursApplication">
+  <test name="on firefox">
+    <Parameter name="Browser" value="firefox"/>
+     <classes>
+      <class name="com.Newtoursdemoaut.NewToursDemoautTestAutomation"/>
+     </classes>  
+   </test>
+<test name="on chrome">
+    <Parameter name="Browser" value="chrome"/>
+     <classes>
+      <class name="com.Newtoursdemoaut.NewToursDemoautTestAutomation"/>
+     </classes>  
+   </test>
+</Suite>

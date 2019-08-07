@@ -1,0 +1,87 @@
+package com.GRIDSelenium;
+
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Grid_Selenium_Code {
+	
+@Parameters("Browser")
+@Test
+public void  logIn(String browser) throws MalformedURLException
+{
+	System.out.println("the browser name is : "+browser);
+	DesiredCapabilities cap=null;
+	if(browser.equalsIgnoreCase("firefox")) {
+		cap=DesiredCapabilities.firefox();
+		cap.setBrowserName("firefox");
+		cap.setPlatform(Platform.WINDOWS);
+	}
+	else
+	{
+		if(browser.equalsIgnoreCase("Chrome"))
+		{
+			cap= DesiredCapabilities.chrome();
+			cap.setBrowserName("chrome");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+		RemoteWebDriver driver= new RemoteWebDriver(new URL("http://192.168.242.1:4444/grid/hub"),cap);
+		String Url="htt://newtours.demaout.com";
+		driver.get("http://www.newtours.demoaut.com/");
+		/*
+		 <a href="mercurysignon.php">SIGN-ON</a>
+		 */
+		//driver.findElement(By.linkText("SIGN-ON")).click();
+		
+		/*
+		 <input name="userName" size="20" maxlength="60">
+		 */
+		driver.findElement(By.name("userName")).sendKeys("tutorial");
+		/*
+		 <input name="password" type="password" size="20" maxlength="60">
+		 */
+		driver.findElement(By.name("password")).sendKeys("tutorial");
+		
+		/*
+		 <input name="login" width="60" height="23" type="image" alt="Login"
+		  src="/images/forms/submit.gif" border="0" value="Login">
+		 */
+		driver.findElement(By.name("login")).click();
+		
+		 String Expected_Title="Find";
+		//Validation
+		
+	//String Actual_Title=driver.getTitle();
+	//System.out.println(Actual_Title);
+
+	if(driver.getTitle().contains(Expected_Title))
+	{
+		System.out.println("Login Successful - PASS  "+ driver.getTitle() );
+		
+	}
+	else
+	{
+		System.out.println("Login Failed- FAIL "+ Expected_Title);
+	}
+
+		}
+		
+			
+			
+			
+			
+			
+			
+			
+		
+	}
+	
+}
+

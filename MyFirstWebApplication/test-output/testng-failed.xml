@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [FBApplication]">
+  <parameter name="Browser" value="firefox"/>
+  <test name="on Chrome">
+    <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code"/>
+    </classes>
+  </test> <!-- on Chrome -->
+  <test name="on Firefox">
+    <parameter name="Browser" value="firefox"/>
+    <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code"/>
+    </classes>
+  </test> <!-- on Firefox -->
+  <test name="on Firefox(failed)">
+    <parameter name="Browser" value="firefox"/>
+    <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code">
+        <methods>
+          <include name="logIn" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.GRIDSelenium.Grid_Selenium_Code -->
+    </classes>
+  </test> <!-- on Firefox(failed) -->
+</suite> <!-- Failed suite [FBApplication] -->

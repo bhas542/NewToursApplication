@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NewToursApplication">
+  <test name="on FireFox">
+    <parameter name="Browser" value="FireFox"/>
+     <classes>
+      <class name="com.GRIDSelenium.Grid_Selenium_Code"/>
+     </classes>  
+   </test>
+ </suite>

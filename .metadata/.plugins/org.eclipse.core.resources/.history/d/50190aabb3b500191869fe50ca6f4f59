@@ -1,0 +1,59 @@
+package com.DataDriven;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class RegisterUserNewTours extends BaseClassDataDriven{
+	 
+	@Test(priority=1)
+	public void register()
+	{
+		WebElement register=driver.findElement(By.linkText("REGISTER"));
+		register.click();
+		}
+	@Test(priority=2)
+	public void fillData() throws IOException, InterruptedException
+	{
+		FileInputStream fis = new FileInputStream("C:\\Users\\bhaskar\\Desktop\\RegisterUserNewTours.xlsx");
+	   XSSFWorkbook workBook= new XSSFWorkbook(fis);
+	   XSSFSheet sheet=workBook.getSheet("Sheet1");
+	  int rowCount= sheet.getLastRowNum();
+	  System.out.println(rowCount);
+	  for(int i=1;i<=rowCount;i++)
+	  {
+		  Row row= sheet.getRow(i);
+		driver.findElement(By.name("firstName")).sendKeys(row.getCell(0).getStringCellValue());
+	 driver.findElement(By.name("lastName")).sendKeys(row.getCell(1).getStringCellValue());
+	 //TypeCasting
+	 double Phone=row.getCell(2).getNumericCellValue();
+	       long Phoneno=((long)Phone);
+	       String Phonenumber=Long.toString(Phoneno);
+ 
+	    
+	 driver.findElement(By.name("phone")).sendKeys(Phonenumber);
+	 driver.findElement(By.name("address1")).sendKeys(row.getCell(3).getStringCellValue());
+	 driver.findElement(By.name("city")).sendKeys(row.getCell(4).getStringCellValue());
+	 double Postal=row.getCell(5).getNumericCellValue();
+     long Postalcode=((long)Postal);
+     String Pc=Long.toString(Postalcode);
+	 driver.findElement(By.name("postalCode")).sendKeys(Pc);
+	 driver.findElement(By.id("email")).sendKeys(row.getCell(7).getStringCellValue());
+	 driver.findElement(By.name("password")).sendKeys(row.getCell(8).getStringCellValue());
+	 driver.findElement(By.name("confirmPassword")).sendKeys(row.getCell(9).getStringCellValue());
+driver.findElement(By.name("register")).click();
+Thread.sleep(3000);
+
+	}
+	  driver.navigate().back();
+	}
+	
+
+}
